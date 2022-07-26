@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../JS/agregarDatos2.js"></script>
+	<link rel="stylesheet" href="https://bootswatch.com/5/minty/bootstrap.min.css">
+	<link rel="stylesheet" href="../CSS/modal.css">
+	< <script src="../JS/animacion.js"></script>
+
+    <link rel="stylesheet" href="../CSS/menu1.css">
+	<title>formulario</title>
+</head>
+<body>
+	<header>
+		<a href="catalogo.html" class="Logo">Sneaker Store ㅤㅤㅤㅤㅤㅤ</a>
+		<nav>
+		  <ul>
+			<li><a href="">ㅤㅤㅤㅤ</a></li>
+			<li><a href="corte de caja.html">ㅤㅤㅤCorte de caja</a></li>
+			<li><a href="catalogo.html">Catalogo </a></li>
+		  </ul>
+		</nav>
+	  </header> 
+
+<!-- Modales -->
+<br><br><br><br><br><br><br>
+	<div class="modal" id="modalAdd">
+		<div class="modal-container">
+			<div class="close-modal" onclick="closeModal()">X</div>
+			<h2>Actualizar Datos</h2>
+							<div class="form-group">
+								<p><label for="select3">Selecciona la marca</label>
+									<select title="Modelo2" name="Modelo2" id="modelo2" class="form-select form-select">
+									<option value="Nike X Off White Blue">Nike X Off White Blue</option>
+									<option value="Nike X Off White Chicago">Nike X Off White Chicago</option>
+									<option value="Nike X Dior">Nike X Dior</option>
+									<option value="Adidas Yeezy Foam">Adidas Yeezy Foam</option>
+									<option value="Nike Mag">Nike Mag</option>
+									<option value="Adidas X Bad Bunny">Adidas X Bad Bunny</option>
+									<option value="Nike X Travis Scott">Nike X Travis Scott</option>
+								</select></p>
+							</div>
+							<div class="form-group">
+								<p><label for="select4">Selecciona la talla</label>
+									<select title="Talla2" name="Talla2" id="talla2" class="form-select form-select">
+									<option value="4">talla 4</option>
+									<option value="5">talla 5</option>
+									<option value="6">talla 6</option>
+									<option value="7">talla 7</option>
+									<option value="8">talla 8</option>
+								</select></p>
+							</div>
+							<div class="form-group">
+								<p><input class="form-control" id="precio2" type="text" placeholder="Precio"></p>
+							</div>
+							<div class="form-group">
+								<p><input class="form-control" id="cantidad2" type="text" placeholder="Cantidad"></p>
+							</div>
+							<div class="form-group">
+								<p><input class="form-control" id="id" type="text" placeholder="Agrege id a actualizar" ></p>
+							</div>
+			<button onclick="edit(),recargar()">Aceptar</button>
+			<button onclick="closeModal()">Cancelar</button>
+		</div>
+	</div>
+
+	<div class="modal" id="modalAdd2">
+		<div class="modal-container">
+			<div class="close-modal" onclick="closeModal2()">X</div>
+			<h2>Borrar datos</h2>
+				<form>
+					<div class="form-group">
+						<p><input class="form-control" id="id1" type="text" placeholder="id de dato a eliminar"></p>
+					</div>
+				</form>
+			<button onclick="borrar(),recargar()">Aceptar</button>
+			<button onclick="closeModal2()">Cancelar</button>
+		</div>
+	</div>
+
+	<div class="modal" id="modalAdd3">
+		<div class="modal-container">
+			<div class="close-modal" onclick="closeModal3()">X</div>
+			<h2>Actualizar Datos</h2>
+			<table class="table table-bordered table-hover">
+				<thead>
+					<div class="form-group">
+						<p><input class="form-control" id="nombre4" type="text" placeholder="Nombre"></p>
+					</div>
+					<div class="form-group">
+						<p><input class="form-control" id="marca4" type="text" placeholder="Contraseña"></p>
+					</div>
+					<div class="form-group">
+						<p><label for="select3">Tipo de usuario</label>
+							<select title="Talla" name="Talla" id="talla4" class="form-select form-select">
+							<option value="Jefe">Jefe</option>
+							<option value="Empleado">Empleado</option>
+						</select></p>
+					</div>
+					<div class="form-group">
+						<p><input class="form-control" id="id4" type="text" placeholder="Agrege id a actualizar" ></p>
+					</div>
+				</thead>
+				</table>
+			<button onclick="edit2(),recargar()">Aceptar</button>
+			<button onclick="closeModal3()">Cancelar</button>
+		</div>
+	</div>
+
+	<div class="modal" id="modalAdd4">
+		<div class="modal-container">
+			<div class="close-modal" onclick="closeModal4()">X</div>
+			<h2>Borrar datos</h2>
+				<form>
+					<div class="form-group">
+						<p><input class="form-control" id="id5" type="text" placeholder="id de dato a eliminar"></p>
+					</div>
+				</form>
+			<button onclick="borrar2(),recargar()">Aceptar</button>
+			<button onclick="closeModal4()">Cancelar</button>
+		</div>
+	</div>
+
+	<!-- tabla inventario -->
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-md-6">
+			<table class="table table-bordered table-hover" id="tabla">
+				<thead>
+					<h3>Tabla Inventario</h3>
+					<tr>
+						<th>Id</th>
+						<th>Modelo</th>
+						<th>Talla</th>
+						<th>Precio</th>
+						<th>Cantidad</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+			<div class="col-md-3">
+				<div class="card">
+					<div class="card-body">
+						<form>
+							<h3>Agregar datos</h3>
+							<div class="form-group">
+								<p><label for="select3">Selecciona el modelo</label>
+									<select title="Modelo" name="MOdelo" id="modelo" class="form-select form-select">
+									<option value="Nike X Off White Blue">Nike X Off White Blue</option>
+									<option value="Nike X Off White Chicago">Nike X Off White Chicago</option>
+									<option value="Nike X Dior">Nike X Dior</option>
+									<option value="Adidas Yeezy Foam">Adidas Yeezy Foam</option>
+									<option value="Nike Mag">Nike Mag</option>
+									<option value="Adidas X Bad Bunny">Adidas X Bad Bunny</option>
+									<option value="Nike X Travis Scott">Nike X Travis Scott</option>
+								</select></p>
+							</div>
+							<div class="form-group">
+								<p><label for="select2">Selecciona la talla</label>
+									<select title="Talla" name="Talla" id="talla" class="form-select form-select">
+									<option value="4">talla 4</option>
+									<option value="5">talla 5</option>
+									<option value="6">talla 6</option>
+									<option value="7">talla 7</option>
+									<option value="8">talla 8</option>
+								</select></p>
+							</div>
+							<div class="form-group">
+								<p><input class="form-control" id="precio" type="text" placeholder="Precio"></p>
+							</div>
+							<div class="form-group">
+								<p><input class="form-control" id="cantidad" type="text" placeholder="Cantidad"></p>
+							</div>
+						</form>
+							<p><button onclick="cargarDatos(),recargar()" >enviar</button></p>
+					</div>
+				</div>		
+			</div>
+			<div class="col-md-3">
+				<div class="card">
+					<div class="card-body">
+						<div>
+							<h3>Actuzalizar Datos</h3>
+							<button onclick="openModal()">Actualizar Datos</button>
+							<h3>Borrar Datos</h3>
+							<button onclick="openModal2()">Borrar Datos</button>
+						</div>	
+					</div>
+				</div>		
+			</div>
+		</div>
+	</div>
+	<!-- tabla usuario -->
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-md-6">
+			<table class="table table-bordered table-hover" id="tabla2">
+				<thead>
+					<h3>Tabla Usuario</h3>
+					<tr>
+						<th>Id</th>
+						<th>Nombre</th>
+						<th>Contraseña</th>
+						<th>Cargo</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+				<div class="col-md-3">
+					<div class="card">
+						<div class="card-body">
+							<form>
+								<h3>Agregar datos</h3>
+								<div class="form-group">
+									<p><input class="form-control" id="nombre3" type="text" placeholder="Nombre"></p>
+								</div>
+								<div class="form-group">
+									<p><input class="form-control" id="marca3" type="text" placeholder="Contraseña"></p>
+								</div>
+								<div class="form-group">
+									<p><label for="select3">Tipo de usuario</label>
+										<select title="Talla" name="Talla" id="talla3" class="form-select form-select">
+										<option value="Jefe">Jefe</option>
+										<option value="Empleado">Empleado</option>
+									</select></p>
+								</div>
+							</form>
+							<p><button onclick="cargarDatos2(),recargar()">enviar</button></p>
+						</div>
+					</div>		
+				</div>
+				<div class="col-md-3">
+					<div class="card">
+						<div class="card-body">
+							<div>
+								<h3>Actuzalizar Datos</h3>
+								<button onclick="openModal3()">Actualizar Datos</button>
+								<h3>Borrar Datos</h3>
+								<button onclick="openModal4()">Borrar Datos</button>
+							</div>	
+						</div>
+					</div>		
+				</div>
+				<div class="container mt-5">
+					<div class="row">
+						<div class="col-md-6">
+							<table class="table table-bordered table-hover" id="tabla3">
+								<thead>
+									<h3>Productos a Aquirir</h3>
+									<tr>
+										<th>Id</th>
+										<th>Marca</th>
+										<th>Talla</th>
+										<th>Precio</th>
+										<th>Cantidad</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>  
+</html>
+
