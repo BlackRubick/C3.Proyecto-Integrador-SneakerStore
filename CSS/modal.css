@@ -1,0 +1,48 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	padding-bottom: 20%;
+}
+
+
+.modal {
+	display: none;
+	background: rgba(0, 0, 0, 0.4) ;
+	width: 100vw;
+	height: 100;
+	top: 0;
+	left: 0;
+	position: fixed;
+	padding: 20px;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+}
+
+.modal-container{
+	background: white;
+	min-width: 400px;
+	max-width: 90%;
+	min-height: 300px;
+	min-height: 50%;
+	padding: 20px;
+	border-radius: 15px;
+	position: relative;
+}
+
+.close-modal{
+	background: red;
+	width: 36px;
+	height: 36px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: azure;
+	font-size: 1.3rem;
+	border-radius: 50%;
+	position: absolute;
+	right: -10px;
+	top: -10px;
+	cursor: pointer;
+}
